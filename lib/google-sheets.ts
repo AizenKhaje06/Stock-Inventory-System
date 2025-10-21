@@ -5,7 +5,7 @@ import type { InventoryItem, Transaction, Log, Restock } from "./types"
 
 const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
-const formatTimestamp = (date: Date) => format(date, "yyyy-MM-dd / hh:mm a")
+const formatTimestamp = (date: Date) => date.toISOString()
 
 async function initializeInventorySheet() {
   const sheets = await getGoogleSheetsClient()
